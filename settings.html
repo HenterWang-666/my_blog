@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>设置 - 个人 Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .glass-card {
+      background: rgba(255,255,255,0.25);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .glass-card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 16px 40px 0 rgba(31,38,135,0.25);
+    }
+    .main-gradient {
+      background: linear-gradient(120deg, #6EE7B7 0%, #3B82F6 100%);
+    }
+    .nav-gradient {
+      background: linear-gradient(90deg, #3B82F6 0%, #9333EA 100%);
+    }
+    .icon-shadow {
+      filter: drop-shadow(0 2px 8px rgba(59,130,246,0.25));
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 min-h-screen font-sans">
+  <!-- 顶部栏 -->
+  <header class="main-gradient rounded-b-2xl shadow-lg p-3 flex flex-col items-center relative" style="min-height: 70px;">
+    <div class="absolute left-3 top-3">
+      <a href="index.html" class="text-white hover:text-yellow-300 text-lg"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="mb-1">
+      <i class="fas fa-cog fa-xl text-white icon-shadow"></i>
+    </div>
+    <h2 class="text-lg font-extrabold text-white tracking-wide drop-shadow-lg">设置</h2>
+    <p class="text-white text-opacity-80 text-xs mt-0.5">主题与账号管理</p>
+  </header>
+  <!-- 设置内容 -->
+  <main class="p-6 pt-4 pb-24">
+    <!-- 主题设置 -->
+    <div class="glass-card p-6 mb-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">主题设置</h3>
+      <div class="flex items-center justify-between">
+        <span class="text-gray-700">深色模式</span>
+        <button onclick="toggleTheme()" class="bg-gray-200 px-4 py-1 rounded-lg text-gray-700 hover:bg-blue-500 hover:text-white transition">
+          切换
+        </button>
+      </div>
+    </div>
+    <!-- 账号设置 -->
+    <div class="glass-card p-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">账号设置</h3>
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-gray-700">账号：xiaoming</span>
+        <button class="bg-red-500 text-white px-4 py-1 rounded-lg hover:bg-red-600 transition">退出登录</button>
+      </div>
+      <div class="text-xs text-gray-400">如需更改密码或绑定邮箱，请前往网页版操作</div>
+    </div>
+  </main>
+  <!-- 底部导航栏 -->
+  <footer class="nav-gradient fixed bottom-0 left-0 right-0 shadow-lg p-2 flex justify-around rounded-t-2xl">
+    <a href="index.html" class="flex flex-col items-center text-white opacity-80 hover:opacity-100">
+      <i class="fas fa-home"></i>
+      <span class="text-xs">首页</span>
+    </a>
+    <a href="posts.html" class="flex flex-col items-center text-white opacity-80 hover:opacity-100">
+      <i class="fas fa-list"></i>
+      <span class="text-xs">文章</span>
+    </a>
+    <a href="profile.html" class="flex flex-col items-center text-white opacity-80 hover:opacity-100">
+      <i class="fas fa-user"></i>
+      <span class="text-xs">我的</span>
+    </a>
+  </footer>
+</body>
+</html>

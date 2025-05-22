@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>文章详情 - 个人 Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .glass-card {
+      background: rgba(255,255,255,0.25);
+      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .glass-card:hover {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 16px 40px 0 rgba(31,38,135,0.25);
+    }
+    .main-gradient {
+      background: linear-gradient(120deg, #6EE7B7 0%, #3B82F6 100%);
+    }
+    .nav-gradient {
+      background: linear-gradient(90deg, #3B82F6 0%, #9333EA 100%);
+    }
+    .icon-shadow {
+      filter: drop-shadow(0 2px 8px rgba(59,130,246,0.25));
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 min-h-screen font-sans">
+  <!-- 顶部栏 -->
+  <header class="main-gradient rounded-b-2xl shadow-lg p-3 flex flex-col items-center relative" style="min-height: 70px;">
+    <div class="absolute left-3 top-3">
+      <a href="posts.html" class="text-white hover:text-yellow-300 text-lg"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="mb-1">
+      <i class="fas fa-list fa-xl text-white icon-shadow"></i>
+    </div>
+    <h2 class="text-lg font-extrabold text-white tracking-wide drop-shadow-lg">文章详情</h2>
+  </header>
+  <!-- 文章内容 -->
+  <main class="p-6 pt-4 pb-24">
+    <div class="glass-card p-6 mb-6">
+      <img src="https://images.pexels.com/photos/261510/pexels-photo-261510.jpeg?auto=compress&w=400&h=200&fit=crop" alt="文章封面" class="w-full h-48 object-cover rounded-xl mb-4" onerror="this.src='https://via.placeholder.com/400x200?text=No+Image';">
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">前端开发入门指南</h1>
+      <div class="flex items-center text-sm text-gray-400 mb-4">
+        <span class="mr-4"><i class="fas fa-user mr-1"></i>小李</span>
+        <span><i class="fas fa-clock mr-1"></i>1天前</span>
+      </div>
+      <div class="text-gray-800 leading-relaxed mb-4">
+        想要成为一名优秀的前端开发者，首先要掌握HTML、CSS和JavaScript三大基础。建议先学习HTML标签和结构，再掌握CSS布局与样式，最后深入理解JavaScript的基本语法和DOM操作。多做项目实践，积极参与社区交流，可以让你更快成长。推荐资源：MDN文档、W3School、B站前端课程等。
+      </div>
+      <div class="flex items-center space-x-6 mb-6">
+        <button class="flex items-center text-gray-500 hover:text-pink-500 focus:outline-none">
+          <i class="fas fa-heart mr-1"></i>点赞
+        </button>
+        <button class="flex items-center text-gray-500 hover:text-yellow-500 focus:outline-none">
+          <i class="fas fa-star mr-1"></i>收藏
+        </button>
+        <button class="flex items-center text-gray-500 hover:text-blue-500 focus:outline-none">
+          <i class="fas fa-comment mr-1"></i>评论
+        </button>
+      </div>
+    </div>
+    <!-- 评论区 -->
+    <section class="glass-card p-6 mb-4">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">评论</h3>
+      <!-- 评论输入框 -->
+      <div class="flex items-center mb-4">
+        <input type="text" placeholder="写下你的评论..." class="flex-1 rounded-l-lg border border-gray-300 p-2 focus:outline-none focus:border-blue-400">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600">发送</button>
+      </div>
+      <!-- 评论卡片示例1 -->
+      <div class="bg-white bg-opacity-80 rounded-xl shadow p-3 mb-2">
+        <div class="flex items-center mb-1">
+          <span class="font-semibold text-gray-700 mr-2">小王</span>
+          <span class="text-xs text-gray-400">2小时前</span>
+        </div>
+        <div class="text-gray-700 text-sm">内容很实用，收藏了！</div>
+      </div>
+      <!-- 评论卡片示例2 -->
+      <div class="bg-white bg-opacity-80 rounded-xl shadow p-3 mb-2">
+        <div class="flex items-center mb-1">
+          <span class="font-semibold text-gray-700 mr-2">小赵</span>
+          <span class="text-xs text-gray-400">1小时前</span>
+        </div>
+        <div class="text-gray-700 text-sm">讲解很清晰，适合新手。</div>
+      </div>
+    </section>
+  </main>
+  <!-- 底部导航栏 -->
+  <footer class="nav-gradient fixed bottom-0 left-0 right-0 shadow-lg p-2 flex justify-around rounded-t-2xl">
+    <a href="index.html" class="flex flex-col items-center text-white opacity-80 hover:opacity-100">
+      <i class="fas fa-home"></i>
+      <span class="text-xs">首页</span>
+    </a>
+    <a href="posts.html" class="flex flex-col items-center text-white opacity-80 hover:opacity-100">
+      <i class="fas fa-list"></i>
+      <span class="text-xs">文章</span>
+    </a>
+    <a href="profile.html" class="flex flex-col items-center text-white opacity-80 hover:opacity-100">
+      <i class="fas fa-user"></i>
+      <span class="text-xs">我的</span>
+    </a>
+  </footer>
+</body>
+</html>
